@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ของขวัญเล็ก ๆ 🤍</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Prompt", sans-serif;
+        background: #eaf4ff;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #222;
+    }
+
+    .container {
+        text-align: center;
+        padding: 20px;
+        max-width: 400px;
+        z-index: 2;
+    }
+
+    h1 {
+        font-weight: 400;
+        margin-bottom: 30px;
+        font-size: 22px;
+    }
+
+    button {
+        padding: 14px 28px;
+        font-size: 16px;
+        border: none;
+        border-radius: 30px;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .message {
+        display: none;
+        font-size: 18px;
+        line-height: 1.8;
+        white-space: pre-line;
+        animation: fadeUp 1.5s ease forwards;
+    }
+
+    .photo {
+        width: 220px;
+        border-radius: 16px;
+        margin: 20px auto;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: photoUp 1.5s ease forwards;
+        animation-delay: 0.3s;
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes photoUp {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        font-size: 20px;
+        animation: floatUp 6s linear infinite;
+        opacity: 0.6;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 0; }
+        10% { opacity: 0.6; }
+        100% { transform: translateY(-110vh); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <div id="start">
+        <h1>
+            ของขวัญเล็ก ๆ<br>
+            สำหรับคนพิเศษ 🤍
+        </h1>
+        <button onclick="openGift()">เปิดของขวัญ 🎁</button>
+    </div>
+
+    <div id="gift" class="message">
+        <img src="love.jpg" class="photo" alt="love">
+        ขอบคุณที่อยู่ข้าง ๆ กันเสมอ  
+        ข้ามปีนี้และทุกปีต่อจากนี้  
+        ขอให้เราได้อยู่ด้วยกันแบบนี้นะ 🤍
+    </div>
+</div>
+
+<script>
+    function openGift() {
+        document.getElementById("start").style.display = "none";
+        document.getElementById("gift").style.display = "block";
+        startHearts();
+    }
+
+    function startHearts() {
+        setInterval(() => {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerText = "🩵";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (16 + Math.random() * 20) + "px";
+            heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 7000);
+        }, 400);
+    }
+</script>
+</body>
+</html>

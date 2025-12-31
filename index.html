@@ -49,27 +49,27 @@
         animation: fadeUp 1.5s ease forwards;
     }
 
+    /* 🎀 ข้อความเหนือรูป */
+    .caption {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 8px;
+        opacity: 0;
+        animation: fadeUp 1.5s ease forwards;
+        animation-delay: 0.3s;
+    }
+
     /* 🌸 รูป + กรอบขาวนุ่ม */
     .photo {
         width: 220px;
         border-radius: 20px;
-        margin: 20px auto 8px;
+        margin: 0 auto 14px;
         padding: 8px;
         background: #ffffffcc;
         box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         opacity: 0;
         transform: translateY(40px);
         animation: photoUp 1.5s ease forwards;
-        animation-delay: 0.3s;
-    }
-
-    /* 🎀 ข้อความใต้รูป */
-    .caption {
-        font-size: 14px;
-        color: #666;
-        margin-bottom: 14px;
-        opacity: 0;
-        animation: fadeUp 1.5s ease forwards;
         animation-delay: 0.6s;
     }
 
@@ -109,8 +109,8 @@
     </div>
 
     <div id="gift" class="message">
-        <img src="love.jpg" class="photo" alt="love">
         <div class="caption">always with you 🤍</div>
+        <img src="love.jpg" class="photo" alt="love">
 
         ขอบคุณที่อยู่ข้าง ๆ กันเสมอ  
         ข้ามปีนี้และทุกปีต่อจากนี้  
